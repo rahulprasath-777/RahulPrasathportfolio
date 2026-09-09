@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume of S. Rahul Prasath — ECE Student, Python & Web Developer. Download PDF resume.">
+  <meta name="keywords" content="Resume, CV, S. Rahul Prasath, Developer">
+  <meta property="og:title" content="Resume | S. Rahul Prasath">
+  <title>Resume | S. Rahul Prasath</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Rahul<span>.</span></a>
+      <ul class="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="skills.html" class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="projects.html" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="certificates.html" class="nav-link" role="menuitem">Certificates</a></li>
+        <li role="none"><a href="experience.html" class="nav-link" role="menuitem">Experience</a></li>
+        <li role="none"><a href="resume.html" class="nav-link" role="menuitem">Resume</a></li>
+        <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="fas fa-sun"></i></button>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="section-label"><i class="fas fa-file-alt"></i> Resume</span>
+      <h1>My <span class="text-gradient">Resume</span></h1>
+      <p>Professional summary of my education, skills, projects, and achievements.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="resume-download reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;align-items:center;">
+        <a href="#" class="btn btn-primary download-resume"><i class="fas fa-download"></i> Download Resume PDF</a>
+        <label class="btn btn-outline" style="cursor:pointer;margin:0;display:inline-flex;align-items:center;gap:0.5rem;">
+          <i class="fas fa-upload"></i> Upload PDF Resume
+          <input type="file" id="resume-upload-input" accept=".pdf" style="display:none;" onchange="handleResumeUpload(event)">
+        </label>
+        <div id="resume-notice" class="resume-notice" style="width:100%;text-align:center;"></div>
+      </div>
+
+      <div class="resume-container card reveal">
+        <div style="text-align:center;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--border-color);">
+          <h2 style="font-size:1.75rem;margin-bottom:0.25rem;">S. Rahul Prasath</h2>
+          <p style="color:var(--text-secondary);">ECE Student | Python Developer | Web Developer</p>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.5rem;">
+            Villupuram, Tamil Nadu, India | rahulprasath070@gmail.com
+          </p>
+        </div>
+
+        <div class="resume-section">
+          <h2>Career Objective</h2>
+          <p>
+            Aspiring Software and Web Developer with a strong foundation in Electronics and Communication
+            Engineering. Seeking opportunities to apply Python, Flask, and web development skills while
+            leveraging electronics knowledge to build innovative technology solutions. Committed to
+            continuous learning and entrepreneurship in the tech industry.
+          </p>
+        </div>
+
+        <div class="resume-section">
+          <h2>Education</h2>
+          <ul>
+            <li><strong>B.E. Electronics and Communication Engineering</strong> — M.A.M. College of Engineering and Technology, Siruganur, Tiruchirappalli (Present)</li>
+            <li><strong>Diploma in Computer Application</strong> — SRM Infotech, Villupuram (April 2024 – October 2024)</li>
+          </ul>
+        </div>
+
+        <div class="resume-section">
+          <h2>Technical Skills</h2>
+          <ul>
+            <li><strong>Programming:</strong> Python Programming, MATLAB, Verilog, C</li>
+            <li><strong>Web Development:</strong> HTML5, CSS3, JavaScript, Bootstrap 5</li>
+            <li><strong>Backend:</strong> Flask, SQLite</li>
+            <li><strong>Tools & Office:</strong> MS Office, Git, GitHub, VS Code</li>
+            <li><strong>Electronics & Hardware:</strong> Arduino, Tinkercad, Circuit Simulation</li>
+          </ul>
+        </div>
+
+        <div class="resume-section">
+          <h2>Projects</h2>
+          <ul>
+            <li><strong>Industrial Waste Exchange Platform</strong> — Flask web platform for industrial waste material exchange (Python, Flask, SQLite, HTML, CSS, JS)</li>
+            <li><strong>Smart EV Parking Slot Indicator</strong> — Arduino-based parking slot occupancy detection system</li>
+            <li><strong>Smart Dustbin / Municipality Notification System</strong> — IoT waste monitoring with GSM notification</li>
+            <li><strong>Face Attendance System</strong> — Python face recognition attendance concept</li>
+          </ul>
+        </div>
+
+        <div class="resume-section">
+          <h2>Certifications</h2>
+          <ul>
+            <li>Diploma in Computer Application — SRM Infotech, Villupuram (2024)</li>
+            <li>30 Days MasterClass in Full Stack Development — NoviTech R&D (2024)</li>
+          </ul>
+        </div>
+
+        <div class="resume-section">
+          <h2>Achievements</h2>
+          <ul>
+            <li>Completed intensive full stack development training program</li>
+            <li>Built multiple web and embedded systems projects</li>
+            <li>Add your achievements here</li>
+          </ul>
+        </div>
+
+        <div class="resume-section">
+          <h2>Contact Information</h2>
+          <ul>
+            <li>Email: rahulprasath070@gmail.com</li>
+            <li>Location: Villupuram, Tamil Nadu, India</li>
+            <li>LinkedIn: linkedin.com/in/rahul-prasath-s-ab9002284</li>
+            <li>GitHub: github.com/rahulprasath-777</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>S. Rahul <span class="text-gradient">Prasath</span></h3>
+          <p>ECE Student | Developer | Entrepreneur</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://linkedin.com/in/rahul-prasath-s-ab9002284" target="_blank"><i class="fab fa-linkedin" style="margin-right:0.4rem;"></i>LinkedIn</a></li>
+            <li><a href="https://github.com/rahulprasath-777" target="_blank"><i class="fab fa-github" style="margin-right:0.4rem;"></i>GitHub</a></li>
+            <li><a href="mailto:rahulprasath070@gmail.com"><i class="fas fa-envelope" style="margin-right:0.4rem;"></i>Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 S. Rahul Prasath. All Rights Reserved. Built with <i class="fas fa-heart" style="color:#ef4444;margin:0 0.2rem;"></i> & passion.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <script src="js/script.js"></script>
+</body>
+</html>

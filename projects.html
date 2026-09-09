@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by S. Rahul Prasath — Web platforms, embedded systems, IoT concepts, and computer vision applications.">
+  <meta name="keywords" content="Projects, Flask, Arduino, Python, Web Development, Embedded Systems">
+  <meta property="og:title" content="Projects | S. Rahul Prasath">
+  <title>Projects | S. Rahul Prasath</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Rahul<span>.</span></a>
+      <ul class="nav-menu" role="menubar">
+        <li role="none"><a href="index.html"       class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html"        class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="skills.html"       class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="projects.html"     class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="certificates.html" class="nav-link" role="menuitem">Certificates</a></li>
+        <li role="none"><a href="experience.html"   class="nav-link" role="menuitem">Experience</a></li>
+        <li role="none"><a href="resume.html"       class="nav-link" role="menuitem">Resume</a></li>
+        <li role="none"><a href="contact.html"      class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="fas fa-sun"></i></button>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="section-label"><i class="fas fa-folder-open"></i> Portfolio</span>
+      <h1>My <span class="text-gradient">Projects</span></h1>
+      <p>A collection of web applications, embedded systems, and software projects showcasing my technical skills.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div id="projects-grid" class="projects-grid"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>S. Rahul <span class="text-gradient">Prasath</span></h3>
+          <p>ECE Student | Developer | Entrepreneur</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#"><i class="fab fa-linkedin" style="margin-right:0.4rem;"></i>LinkedIn</a></li>
+            <li><a href="#"><i class="fab fa-github" style="margin-right:0.4rem;"></i>GitHub</a></li>
+            <li><a href="mailto:rahulprasath070@gmail.com"><i class="fas fa-envelope" style="margin-right:0.4rem;"></i>Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 S. Rahul Prasath. All Rights Reserved. Built with <i class="fas fa-heart" style="color:#ef4444;margin:0 0.2rem;"></i> & passion.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="project-modal-title"></h3>
+        <button class="modal-close" onclick="closeProjectModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Add Project Modal -->
+  <div class="modal-overlay" id="add-project-modal" role="dialog" aria-modal="true" aria-labelledby="add-project-title">
+    <div class="modal-content" style="max-width:600px;">
+      <div class="modal-header">
+        <h3 id="add-project-title">Add New Project</h3>
+        <button class="modal-close" onclick="closeAddProjectModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="add-project-form" novalidate>
+          <div class="form-group" style="margin-top:1.5rem;">
+            <label for="project-title"><i class="fas fa-heading" style="margin-right:0.4rem;color:var(--primary-light);"></i>Project Title</label>
+            <input type="text" id="project-title" class="form-control" placeholder="e.g. AI Portfolio Website" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="project-short-desc"><i class="fas fa-comment-alt" style="margin-right:0.4rem;color:var(--primary-light);"></i>Short Description</label>
+            <input type="text" id="project-short-desc" class="form-control" placeholder="1-2 sentences overview..." required>
+          </div>
+          
+          <div class="form-group">
+            <label for="project-tech"><i class="fas fa-code" style="margin-right:0.4rem;color:var(--primary-light);"></i>Technologies (Comma-separated)</label>
+            <input type="text" id="project-tech" class="form-control" placeholder="e.g. HTML, CSS, JavaScript, Python" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="project-demo"><i class="fas fa-external-link-alt" style="margin-right:0.4rem;color:var(--primary-light);"></i>Live Demo URL (Optional)</label>
+            <input type="text" id="project-demo" class="form-control" placeholder="https://... or #">
+          </div>
+          
+          <div class="form-group">
+            <label for="project-github"><i class="fab fa-github" style="margin-right:0.4rem;color:var(--primary-light);"></i>GitHub URL (Optional)</label>
+            <input type="text" id="project-github" class="form-control" placeholder="https://github.com/... or #">
+          </div>
+
+          <div class="form-group">
+            <label for="project-video"><i class="fas fa-video" style="margin-right:0.4rem;color:var(--primary-light);"></i>Project Video URL (YouTube / MP4 / Drive)</label>
+            <input type="text" id="project-video" class="form-control" placeholder="https://youtube.com/watch?v=... or video link">
+          </div>
+
+          <div class="form-group">
+            <label for="project-report"><i class="fas fa-file-pdf" style="margin-right:0.4rem;color:var(--primary-light);"></i>Project Report URL (PDF / Google Docs / Drive)</label>
+            <input type="text" id="project-report" class="form-control" placeholder="https://... or link to report">
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:1rem;">
+            <i class="fas fa-save"></i> Save Project
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Certificates and achievements of S. Rahul Prasath — Computer Application Diploma, Full Stack Development MasterClass.">
+  <meta name="keywords" content="Certificates, Achievements, SRM Infotech, NoviTech, Full Stack">
+  <meta property="og:title" content="Certificates | S. Rahul Prasath">
+  <title>Certificates | S. Rahul Prasath</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Rahul<span>.</span></a>
+      <ul class="nav-menu" role="menubar">
+        <li role="none"><a href="index.html"       class="nav-link" role="menuitem">Home</a></li>
+        <li role="none"><a href="about.html"        class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="skills.html"       class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="projects.html"     class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="certificates.html" class="nav-link" role="menuitem">Certificates</a></li>
+        <li role="none"><a href="experience.html"   class="nav-link" role="menuitem">Experience</a></li>
+        <li role="none"><a href="resume.html"       class="nav-link" role="menuitem">Resume</a></li>
+        <li role="none"><a href="contact.html"      class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark/light mode"><i class="fas fa-sun"></i></button>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="section-label"><i class="fas fa-award"></i> Achievements</span>
+      <h1>Certificates & <span class="text-gradient">Credentials</span></h1>
+      <p>Professional certifications and training programs that validate my technical skills and continuous learning.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div id="certificates-grid" class="certificates-grid"></div>
+      <div class="reveal" style="text-align:center;margin-top:3rem;">
+        <p style="color:var(--text-muted);font-size:0.88rem;display:inline-flex;align-items:center;gap:0.5rem;">
+          <i class="fas fa-info-circle" style="color:var(--primary-light);"></i>
+          Click any certificate to view in full-screen. Add new ones in <code style="background:var(--bg-glass);padding:0.1rem 0.4rem;border-radius:4px;font-size:0.8rem;">js/script.js</code> → <code style="background:var(--bg-glass);padding:0.1rem 0.4rem;border-radius:4px;font-size:0.8rem;">certificatesData</code>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>S. Rahul <span class="text-gradient">Prasath</span></h3>
+          <p>ECE Student | Developer | Entrepreneur</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#"><i class="fab fa-linkedin" style="margin-right:0.4rem;"></i>LinkedIn</a></li>
+            <li><a href="#"><i class="fab fa-github" style="margin-right:0.4rem;"></i>GitHub</a></li>
+            <li><a href="mailto:rahulprasath070@gmail.com"><i class="fas fa-envelope" style="margin-right:0.4rem;"></i>Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 S. Rahul Prasath. All Rights Reserved. Built with <i class="fas fa-heart" style="color:#ef4444;margin:0 0.2rem;"></i> & passion.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="cert-modal" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title">
+    <div class="modal-content" style="max-width:820px;">
+      <div class="modal-header">
+        <h3 id="cert-modal-title"></h3>
+        <button class="modal-close" onclick="closeCertificateModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image-container">
+          <img src="" alt="" style="object-fit:contain;">
+          <div class="cert-modal-no-image img-placeholder" style="display:none;height:300px;border-radius:12px;">
+            <div style="text-align:center;">
+              <i class="fas fa-certificate" style="font-size:3rem;opacity:0.4;margin-bottom:0.5rem;"></i>
+              <p>Certificate image not found</p>
+              <p style="font-size:0.85rem;">Add image to images/certificates/</p>
+            </div>
+          </div>
+        </div>
+        <div class="cert-modal-info" style="margin-top:1rem;"></div>
+      </div>
+      <div class="modal-zoom-controls">
+        <button class="btn-icon" onclick="zoomCertificate(-0.25)" aria-label="Zoom out"><i class="fas fa-search-minus"></i></button>
+        <button class="btn-icon" onclick="zoomCertificate(0.25)" aria-label="Zoom in"><i class="fas fa-search-plus"></i></button>
+      </div>
+      <button class="modal-nav modal-prev" onclick="navigateCertificate(-1)" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+      <button class="modal-nav modal-next" onclick="navigateCertificate(1)" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="add-cert-modal" role="dialog" aria-modal="true" aria-labelledby="add-cert-title">
+    <div class="modal-content" style="max-width:600px;">
+      <div class="modal-header">
+        <h3 id="add-cert-title">Add New Certificate</h3>
+        <button class="modal-close" onclick="closeAddCertModal()" aria-label="Close"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="add-cert-form" novalidate>
+          <div class="form-group" style="margin-top:1.5rem;">
+            <label for="cert-title"><i class="fas fa-heading" style="margin-right:0.4rem;color:var(--primary-light);"></i>Certificate Title</label>
+            <input type="text" id="cert-title" class="form-control" placeholder="e.g. Frontend Development Certification" required>
+            <div id="cert-title-error" class="form-error" role="alert">Please enter a title.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="cert-org"><i class="fas fa-building" style="margin-right:0.4rem;color:var(--primary-light);"></i>Issuing Organization</label>
+            <input type="text" id="cert-org" class="form-control" placeholder="e.g. Coursera, Udemy" required>
+            <div id="cert-org-error" class="form-error" role="alert">Please enter an organization.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="cert-date"><i class="fas fa-calendar" style="margin-right:0.4rem;color:var(--primary-light);"></i>Date / Duration</label>
+            <input type="text" id="cert-date" class="form-control" placeholder="e.g. August 2024" required>
+            <div id="cert-date-error" class="form-error" role="alert">Please enter a date.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="cert-desc"><i class="fas fa-align-left" style="margin-right:0.4rem;color:var(--primary-light);"></i>Description</label>
+            <textarea id="cert-desc" class="form-control" placeholder="Brief description of the certification..." rows="3" required></textarea>
+            <div id="cert-desc-error" class="form-error" role="alert">Please enter a description.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="cert-skills"><i class="fas fa-tags" style="margin-right:0.4rem;color:var(--primary-light);"></i>Skills (Comma-separated)</label>
+            <input type="text" id="cert-skills" class="form-control" placeholder="e.g. HTML, CSS, JavaScript">
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:1rem;">
+            <i class="fas fa-save"></i> Save Certificate
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <script src="js/script.js"></script>
+</body>
+</html>
